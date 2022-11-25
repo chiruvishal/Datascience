@@ -58,10 +58,12 @@ def get_pie_chart(entered_site):
                      names='class', 
                      title='Total Launches for site {}'.format(entered_site))        
     return fig
-        
-
+  
+  
+@app.callback(Output(component_id='success-payload-scatter-chart', component_property='figure'),
               Input(component_id='site-dropdown', component_property='value'), 
               Input(component_id="payload-slider", component_property="value"))
+
 def get_scatter_chart(entered_site, payload_range):
     print('Params: {} {}'.format(entered_site, payload_range))
     if entered_site == 'ALL':
